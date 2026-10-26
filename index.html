@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+<title>Handyman Services East Bay | Victor's Handyman Services</title>
+<meta name="description" content="Victor's Handyman Services — where quality and affordability come together. Professional, safe and reliable handyman services in California's East Bay Area." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
+<style>
+  /* Light page with a cinematic navy hero/header/footer; copper accent carried over from the original site's buttons */
+  :root{
+    --bg:#F5F7FA; --bg2:#ECF0F5; --surface:#FFFFFF; --surface-2:#E8EDF3;
+    --line:rgba(12,28,50,.10); --line-2:rgba(12,28,50,.16);
+    --accent:#D9692B; --accent-hi:#E8803F; --accent-ink:#B4541C;
+    --glow:#F2A46A;
+    --navy:#0B1A33; --navy-2:#081326;
+    --text:#3A4756; --muted:#5E6E7E; --ink:#0B1622;
+    --maxw:1200px; --r:18px;
+    --shadow:0 20px 50px -26px rgba(20,40,70,.32);
+    color-scheme:light;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);
+    font-family:"Hanken Grotesk",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3,h4{font-family:"Archivo","Hanken Grotesk",sans-serif;margin:0;line-height:1.02;letter-spacing:-.02em;font-weight:800}
+  p{margin:0}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  [hidden]{display:none!important}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+  .eyebrow{font-size:12px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-ink);display:inline-flex;align-items:center;gap:12px}
+  .eyebrow::before{content:"";width:30px;height:2px;background:currentColor;display:inline-block}
+  .eyebrow.center{justify-content:center}
+  .eyebrow.on-dark{color:var(--glow)}
+
+  .btn{display:inline-flex;align-items:center;gap:.5em;font-family:"Hanken Grotesk",sans-serif;font-weight:800;font-size:15px;
+    padding:15px 24px;border-radius:999px;cursor:pointer;border:1.5px solid transparent;transition:transform .18s ease, background .2s, box-shadow .2s, border-color .2s;white-space:nowrap}
+  .btn .arr{width:17px;height:17px;transition:transform .2s ease}
+  .btn:hover .arr{transform:translate(2px,-2px)}
+  .btn:focus-visible{outline:3px solid var(--glow);outline-offset:3px}
+  .btn-primary{background:var(--accent);color:#fff;box-shadow:0 12px 30px -10px rgba(217,105,43,.7)}
+  .btn-primary:hover{transform:translateY(-2px);background:var(--accent-hi)}
+  .btn-glass{background:rgba(255,255,255,.06);color:#fff;border-color:rgba(255,255,255,.22);backdrop-filter:blur(6px)}
+  .btn-glass:hover{background:rgba(255,255,255,.12);transform:translateY(-2px)}
+  .btn-light{background:#fff;color:#0a0e14}
+  .btn-light:hover{transform:translateY(-2px)}
+
+  /* ---------- Header ---------- */
+  header{position:fixed;top:0;left:0;right:0;z-index:60;transition:background .3s, border-color .3s, backdrop-filter .3s;border-bottom:1px solid transparent}
+  header.scrolled{background:rgba(9,20,40,.92);backdrop-filter:blur(14px);border-bottom-color:rgba(255,255,255,.08)}
+  .subnav{background:var(--navy-2);border-bottom:1px solid rgba(255,255,255,.08)}
+  .subnav-in{display:flex;justify-content:flex-end;align-items:center;gap:16px;height:39px}
+  .sn-item{color:#E3E9F3;font-size:13px;font-weight:700;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+  .sn-item svg{width:14px;height:14px}
+  .sn-item:hover{color:#fff}
+  .sn-div{width:1px;height:16px;background:rgba(255,255,255,.18)}
+  .sn-book{color:#fff;background:var(--accent);padding:5px 13px;border-radius:999px}
+  .sn-book:hover{background:var(--accent-hi);color:#fff}
+  .sn-left{margin-right:auto;color:#9FB0C6;font-size:12.5px;font-weight:700}
+  @media(max-width:860px){.sn-left{display:none}}
+  @media(max-width:700px){.subnav{display:none}}
+  .nav{display:flex;align-items:center;gap:26px;height:76px;transition:height .28s ease}
+  header:not(.scrolled) .nav{height:104px}
+  .brand{display:flex;align-items:center;gap:12px;color:#fff}
+  .brand .mark{width:46px;height:46px;flex:none;transition:width .28s,height .28s}
+  header.scrolled .brand .mark{width:38px;height:38px}
+  .brand .wm{display:flex;flex-direction:column;line-height:1}
+  .brand .wm b{font-family:"Archivo",sans-serif;font-weight:900;font-size:24px;letter-spacing:-.02em}
+  .brand .wm small{font-size:10.5px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--glow);margin-top:5px}
+  .navlinks{display:flex;gap:26px;margin-left:18px;font-size:14.5px;font-weight:700;color:rgba(255,255,255,.82)}
+  .navlinks a{position:relative;padding:4px 0}
+  .navlinks a:hover{color:#fff}
+  .navlinks a::after{content:"";position:absolute;left:0;right:100%;bottom:-2px;height:2px;background:var(--glow);transition:right .25s}
+  .navlinks a:hover::after{right:0}
+  .nav-right{margin-left:auto;display:flex;align-items:center;gap:11px}
+  .nav-right .btn{padding:12px 18px;font-size:14px}
+  /* the sub-nav's "Schedule an Estimate" is the persistent desktop CTA; keep the nav button on mobile where the sub-nav is hidden */
+  @media(min-width:701px){ .nav-right .btn-primary{display:none} }
+  @media(max-width:1040px){.navlinks{display:none}}
+  .hamburger{display:none;width:44px;height:44px;border-radius:12px;border:1.5px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);color:#fff;place-items:center;cursor:pointer;flex:none;padding:0}
+  .hamburger:hover{background:rgba(255,255,255,.13)}
+  .hamburger svg{width:22px;height:22px}
+  .hamburger .i-x{display:none}
+  .hamburger.open .i-bars{display:none}
+  .hamburger.open .i-x{display:block}
+  @media(max-width:1040px){.hamburger{display:grid}}
+  .mobile-menu{position:fixed;inset:0;z-index:50;background:rgba(6,12,24,.985);backdrop-filter:blur(10px);
+    padding:104px 30px 40px;display:flex;flex-direction:column;
+    transform:translateY(-14px);opacity:0;pointer-events:none;transition:opacity .28s ease,transform .28s ease}
+  .mobile-menu.open{transform:none;opacity:1;pointer-events:auto}
+  .mobile-menu nav{display:flex;flex-direction:column}
+  .mobile-menu nav a{color:#fff;font-family:"Archivo","Hanken Grotesk",sans-serif;font-weight:800;font-size:clamp(26px,7vw,34px);letter-spacing:-.02em;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.09)}
+  .mobile-menu nav a:active{color:var(--glow)}
+  .mm-foot{margin-top:auto;display:flex;flex-direction:column;gap:12px}
+  .mm-foot .btn{justify-content:center;font-size:16px;padding:16px 20px}
+  @media(min-width:1041px){.mobile-menu{display:none}}
+  @media(max-width:700px){header:not(.scrolled) .nav{height:88px}.brand .wm b{font-size:20px}.brand .mark{width:40px;height:40px}}
+  @media(max-width:560px){.nav-right .btn-primary{display:none}}
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;min-height:92vh;display:flex;align-items:center;overflow:hidden;isolation:isolate;background:var(--navy)}
+  .hero-bg{position:absolute;top:-25%;left:0;right:0;height:150%;z-index:0;will-change:transform}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;display:block}
+  .hero-scrim{position:absolute;inset:0;z-index:1;
+    background:linear-gradient(180deg,rgba(6,12,24,.74) 0%,rgba(6,12,24,.5) 42%,rgba(6,12,24,.88) 100%),
+               radial-gradient(120% 90% at 15% 40%, rgba(8,14,26,.72), transparent 60%)}
+  .hero .wrap{position:relative;z-index:2;width:100%;padding-top:150px;padding-bottom:90px}
+  .hero-inner{max-width:860px}
+  .hero h1{font-size:clamp(44px,7.4vw,92px);font-weight:900;color:#fff;letter-spacing:-.03em;text-wrap:balance;margin-top:18px}
+  .hero h1 .hl{color:var(--glow)}
+  .hero .sub{margin-top:24px;max-width:56ch;font-size:clamp(17px,2vw,21px);color:#D3DCE8;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+  .hero .cta{margin-top:36px;display:flex;flex-wrap:wrap;gap:14px}
+  .hero .promise{margin-top:30px;display:flex;flex-wrap:wrap;gap:10px 22px;font-size:14.5px;color:#D3DCE8;font-weight:700}
+  .hero .promise span{display:inline-flex;align-items:center;gap:8px}
+  .hero .promise svg{width:16px;height:16px;color:var(--glow)}
+  .scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:4;color:rgba(255,255,255,.55);font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px}
+  .scroll-hint .line{width:1.5px;height:34px;background:linear-gradient(var(--glow),transparent);animation:pulse 2s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:.4}50%{opacity:1}}
+
+  section{padding:100px 0;position:relative;scroll-margin-top:70px}
+  .sec-head{max-width:680px}
+  .sec-head.center{margin:0 auto;text-align:center}
+  .sec-head h2{font-size:clamp(30px,4.6vw,52px);margin-top:16px;font-weight:800;color:var(--ink)}
+  .sec-head p{margin-top:18px;color:var(--muted);font-size:18px}
+
+  /* ---------- Welcome + promise ---------- */
+  .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .intro-copy h2{font-size:clamp(30px,4.4vw,50px);color:var(--ink);font-weight:800;margin-top:16px}
+  .intro-copy p{color:var(--muted);margin-top:18px;font-size:17.5px}
+  .intro-copy h3{margin-top:30px;font-size:20px;color:var(--ink)}
+  .chips{margin-top:16px;display:flex;flex-direction:column;gap:12px}
+  .chip{display:flex;align-items:center;gap:14px;font-weight:700;color:var(--ink)}
+  .chip .tick{width:30px;height:30px;border-radius:9px;background:rgba(217,105,43,.14);color:var(--accent-ink);display:grid;place-items:center;flex:none}
+  .chip .tick svg{width:17px;height:17px}
+  .intro-copy .btn{margin-top:30px}
+  .intro-media{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:4/5;box-shadow:var(--shadow);border:1px solid var(--line)}
+  .intro-media img{width:100%;height:100%;object-fit:cover}
+  .intro-media .badge{position:absolute;left:20px;bottom:20px;background:rgba(8,14,26,.72);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:14px 18px}
+  .intro-media .badge b{font-family:"Archivo";font-size:26px;color:#fff;font-weight:900}
+  .intro-media .badge small{display:block;color:#C3CEDB;font-size:12.5px;font-weight:700}
+  @media(max-width:880px){.intro-grid{grid-template-columns:1fr;gap:36px}.intro-media{aspect-ratio:16/11}}
+
+  .stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2)}
+  .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:44px;padding-bottom:44px}
+  .stat{display:flex;flex-direction:column;gap:4px}
+  .stat .n{font-family:"Archivo";font-weight:900;font-size:clamp(34px,4.6vw,52px);color:var(--ink);letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+  .stat .n .u{color:var(--accent)}
+  .stat .l{color:var(--muted);font-size:14px;font-weight:700}
+  @media(max-width:720px){.stats .wrap{grid-template-columns:1fr 1fr;gap:30px 20px}}
+
+  /* ---------- Services ---------- */
+  .prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
+  .card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:transform .22s, border-color .22s, box-shadow .22s}
+  .card:hover{transform:translateY(-6px);border-color:var(--line-2);box-shadow:var(--shadow)}
+  .pmedia{height:210px;overflow:hidden;background:var(--surface-2);border-bottom:1px solid var(--line)}
+  .pmedia img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+  .card:hover .pmedia img{transform:scale(1.05)}
+  .card-body{padding:24px 24px 26px;display:flex;flex-direction:column;flex:1}
+  .card .tag{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink)}
+  .card h3{font-size:21px;margin-top:11px;color:var(--ink);font-weight:800;letter-spacing:-.01em;line-height:1.12}
+  .card p{margin-top:10px;color:var(--muted);font-size:15px;flex:1}
+  .card .go{margin-top:18px;font-weight:800;font-size:14px;color:var(--accent-ink);display:inline-flex;gap:7px;align-items:center}
+  .card .go .arr{width:15px;height:15px;transition:transform .2s}
+  .card:hover .go .arr{transform:translate(2px,-2px)}
+  @media(max-width:1040px){.prod-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.prod-grid{grid-template-columns:1fr}}
+
+  /* ---------- How it works ---------- */
+  .how{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px}
+  .step{position:relative;padding-top:26px}
+  .step .num{font-family:"Archivo";font-weight:900;font-size:15px;color:var(--accent);letter-spacing:.1em}
+  .step h3{font-size:20px;margin-top:14px;color:var(--ink);font-weight:800}
+  .step p{margin-top:10px;color:var(--muted);font-size:15px}
+  .step::before{content:"";position:absolute;top:0;left:0;width:46px;height:3px;background:var(--accent);border-radius:3px}
+  @media(max-width:760px){.steps{grid-template-columns:1fr;gap:30px}}
+
+  /* ---------- Estimate band ---------- */
+  .band{position:relative;border-radius:26px;overflow:hidden;border:1px solid var(--line);isolation:isolate}
+  .band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+  .band .scrim{position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(8,14,26,.95) 0%,rgba(8,14,26,.82) 45%,rgba(12,26,50,.5) 100%)}
+  .band-inner{padding:64px 56px;max-width:640px}
+  .band h2{font-size:clamp(28px,4vw,44px);color:#fff;font-weight:800;margin-top:14px}
+  .band p{color:#D3DCE8;margin-top:16px;font-size:18px}
+  .band .cta{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap}
+  .band .mail{margin-top:18px;font-size:14.5px;color:#C3CEDB;font-weight:700}
+  .band .mail a{color:#fff;border-bottom:1px solid rgba(255,255,255,.35)}
+  @media(max-width:640px){.band-inner{padding:40px 28px}}
+
+  /* ---------- Gallery ---------- */
+  .gallery{columns:4 240px;column-gap:14px;margin-top:44px}
+  .gallery button{display:block;width:100%;margin:0 0 14px;padding:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:zoom-in;background:var(--surface-2);break-inside:avoid;position:relative}
+  .gallery img{width:100%;height:auto;transition:transform .45s ease, filter .3s}
+  .gallery button:hover img{transform:scale(1.04);filter:brightness(1.05)}
+  .gallery button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+  .gallery .more{display:none}
+  .gallery.expanded .more{display:block}
+  @media(max-width:600px){.gallery{columns:2;column-gap:10px}.gallery button{margin-bottom:10px}}
+  .gal-foot{display:flex;justify-content:center;margin-top:20px}
+  .btn-outline{background:transparent;color:var(--ink);border-color:var(--line-2)}
+  .btn-outline:hover{border-color:var(--accent);color:var(--accent-ink);transform:translateY(-2px)}
+  .lightbox{position:fixed;inset:0;z-index:90;background:rgba(5,9,18,.94);display:none;align-items:center;justify-content:center;padding:60px 70px}
+  .lightbox.open{display:flex}
+  .lightbox img{max-width:100%;max-height:100%;object-fit:contain;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+  .lb-btn{position:absolute;width:48px;height:48px;border-radius:50%;border:1.5px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:#fff;font-size:24px;cursor:pointer;display:grid;place-items:center}
+  .lb-btn:hover{background:rgba(255,255,255,.16)}
+  .lb-x{top:16px;right:16px}
+  .lb-prev{left:14px;top:50%;transform:translateY(-50%)}
+  .lb-next{right:14px;top:50%;transform:translateY(-50%)}
+  .lb-count{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);color:#C3CEDB;font-size:13px;font-weight:700;letter-spacing:.08em}
+  @media(max-width:600px){.lightbox{padding:70px 12px}.lb-prev,.lb-next{top:auto;bottom:10px;transform:none}}
+
+  /* ---------- Schedule / about ---------- */
+  .team{background:var(--bg2);border-top:1px solid var(--line)}
+  .team-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:52px;align-items:center}
+  .team-photo{border-radius:22px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);aspect-ratio:4/5}
+  .team-photo img{width:100%;height:100%;object-fit:cover}
+  .team-copy h2{font-size:clamp(28px,4vw,46px);color:var(--ink);font-weight:800;margin-top:16px}
+  .team-copy p{color:var(--muted);margin-top:18px;font-size:17.5px}
+  .team-names{margin-top:26px;display:flex;flex-direction:column}
+  .team-names .name{display:flex;align-items:center;gap:13px;padding:15px 0;border-bottom:1px solid var(--line)}
+  .team-names .name:last-child{border-bottom:none}
+  .team-names .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);flex:none}
+  .team-names b{color:var(--ink);font-size:17px}
+  .team-names small{display:block;color:var(--muted)}
+  .team-copy .cta{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
+  @media(max-width:880px){.team-grid{grid-template-columns:1fr;gap:30px}.team-photo{aspect-ratio:16/11}}
+
+  /* ---------- Quote form ---------- */
+  #quote{background:var(--bg)}
+  .quote-card{max-width:760px;margin:44px auto 0;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:36px;box-shadow:var(--shadow)}
+  .q-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .q-grid .full{grid-column:1/-1}
+  .q-field label{display:block;font-weight:800;font-size:14px;color:var(--ink);margin-bottom:7px}
+  .q-field label i{color:var(--accent);font-style:normal}
+  .q-field input,.q-field textarea{width:100%;padding:14px 16px;border-radius:12px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);font-size:15px;font-family:inherit}
+  .q-field textarea{min-height:130px;resize:vertical}
+  .q-field input:focus,.q-field textarea:focus{outline:none;border-color:var(--accent);background:#fff}
+  .q-check{display:flex;gap:10px;align-items:flex-start;margin-top:18px;color:var(--muted);font-size:14px;cursor:pointer}
+  .q-check input{margin-top:4px;flex:none;accent-color:var(--accent)}
+  .q-legal{font-size:13px;color:var(--muted);margin-top:16px}
+  .q-err{color:#C0392B;font-size:13.5px;margin-top:12px;min-height:2px;font-weight:700}
+  .q-nav{display:flex;justify-content:space-between;align-items:center;margin-top:22px;gap:14px;flex-wrap:wrap}
+  .q-nav .alt{color:var(--muted);font-size:14.5px;font-weight:700}
+  .q-nav .alt a{color:var(--accent-ink)}
+  .q-done{text-align:center;padding:10px 0}
+  .q-done .ic{width:64px;height:64px;border-radius:18px;margin:0 auto 18px;background:rgba(217,105,43,.14);color:var(--accent-ink);display:grid;place-items:center}
+  .q-done h3{font-size:26px;color:var(--ink)}
+  .q-done p{color:var(--muted);margin-top:12px}
+  @media(max-width:600px){.q-grid{grid-template-columns:1fr}.quote-card{padding:24px}}
+
+  /* ---------- Contact ---------- */
+  .contact-sec{background:var(--bg2);border-top:1px solid var(--line)}
+  .contact-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:40px;margin-top:40px;align-items:stretch}
+  .contact-info{display:flex;flex-direction:column;gap:22px}
+  .contact-row{display:flex;gap:14px;align-items:flex-start}
+  .contact-row .ic{width:42px;height:42px;border-radius:11px;background:rgba(217,105,43,.14);color:var(--accent-ink);display:grid;place-items:center;flex:none}
+  .contact-row .ic svg{width:20px;height:20px}
+  .contact-row b{color:var(--ink);font-size:16px;display:block}
+  .contact-row span,.contact-row a{color:var(--muted);font-size:15px}
+  .contact-row a:hover{color:var(--accent-ink)}
+  .contact-map{border-radius:18px;overflow:hidden;border:1px solid var(--line);min-height:380px;background:var(--surface-2);position:relative}
+  .contact-map iframe{width:100%;height:100%;min-height:380px;border:0;display:block}
+  .map-cap{position:absolute;right:14px;top:14px;z-index:3;font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);background:rgba(255,255,255,.92);padding:5px 10px;border-radius:999px;border:1px solid #e2e9f3;pointer-events:none}
+  @media(max-width:820px){.contact-grid{grid-template-columns:1fr}.contact-map,.contact-map iframe{min-height:300px}}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--navy-2);padding:70px 0 36px;border-top:1px solid rgba(255,255,255,.09)}
+  .foot{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:34px}
+  footer .brand{margin-bottom:18px}
+  .foot p{color:#9FB0C6;font-size:14.5px;line-height:1.7}
+  .foot .fphone{color:#fff;font-family:"Archivo";font-weight:900;font-size:20px;margin-top:14px;display:inline-block}
+  .foot h4{color:#fff;font-size:12.5px;text-transform:uppercase;letter-spacing:.12em;margin:0 0 15px;font-family:"Hanken Grotesk";font-weight:800}
+  .foot a{display:block;color:#9FB0C6;font-size:14.5px;padding:5px 0}
+  .foot a:hover{color:#fff}
+  .foot a.brand{display:flex;padding:0;color:#fff}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.09);margin-top:44px;padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:#6A7B92}
+  @media(max-width:820px){.foot{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.foot{grid-template-columns:1fr}}
+
+  .flag{position:fixed;bottom:14px;left:14px;z-index:80;background:rgba(11,26,51,.92);border:1px solid rgba(255,255,255,.14);color:#E3E9F3;font-size:11px;font-weight:800;letter-spacing:.05em;padding:8px 13px;border-radius:999px;backdrop-filter:blur(8px)}
+  @media(max-width:480px){.flag{display:none}}
+
+  /* scroll-triggered estimate toast + collapsed bubble */
+  .ft-toast{position:fixed;right:22px;bottom:22px;z-index:75;width:320px;max-width:calc(100vw - 32px);
+    background:var(--surface);border:1px solid var(--line-2);border-radius:18px;padding:20px 20px 18px;
+    box-shadow:0 24px 60px -20px rgba(10,25,50,.45);transform:translateY(26px) scale(.97);opacity:0;pointer-events:none;
+    transition:opacity .35s ease, transform .35s ease}
+  .ft-toast.show{transform:none;opacity:1;pointer-events:auto}
+  .ft-toast .x{position:absolute;top:10px;right:12px;width:28px;height:28px;border:none;background:transparent;color:var(--muted);font-size:20px;line-height:1;cursor:pointer;border-radius:7px}
+  .ft-toast .x:hover{color:var(--ink);background:var(--surface-2)}
+  .ft-ic{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:rgba(217,105,43,.14);color:var(--accent-ink);margin-bottom:13px}
+  .ft-ic svg{width:23px;height:23px}
+  .ft-toast h4{font-size:19px;color:var(--ink);font-weight:800;letter-spacing:-.01em}
+  .ft-toast p{color:var(--muted);font-size:14px;margin:7px 0 15px;line-height:1.5}
+  .ft-toast .btn{width:100%;justify-content:center;font-size:14.5px;padding:12px 18px}
+  .ft-toast .btn + .btn{margin-top:8px}
+  .ft-bubble{position:fixed;right:22px;bottom:22px;z-index:75;width:58px;height:58px;border-radius:50%;border:none;cursor:pointer;
+    background:linear-gradient(150deg,var(--accent-hi),#A9461A);color:#fff;display:none;place-items:center;
+    box-shadow:0 16px 32px -8px rgba(217,105,43,.6);transition:transform .2s ease}
+  .ft-bubble.show{display:grid;animation:ftpop .4s ease}
+  .ft-bubble:hover{transform:translateY(-3px) scale(1.05)}
+  .ft-bubble svg{width:26px;height:26px}
+  .ft-bubble::after{content:"";position:absolute;top:0;right:0;width:13px;height:13px;border-radius:50%;background:var(--navy);border:2px solid var(--bg);animation:ftpulse 2s ease-in-out infinite}
+  @keyframes ftpop{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+  @keyframes ftpulse{0%,100%{box-shadow:0 0 0 0 rgba(217,105,43,.5)}50%{box-shadow:0 0 0 7px rgba(217,105,43,0)}}
+  @media(max-width:480px){.ft-toast{right:12px;left:12px;bottom:12px;width:auto}.ft-bubble{right:14px;bottom:14px}}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none!important;scroll-behavior:auto!important}
+  }
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="subnav">
+    <div class="wrap subnav-in">
+      <span class="sn-left">Servicing California's East Bay Area</span>
+      <a class="sn-item" href="tel:9258496955"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h3.5l1.5 4-2 1.3a11 11 0 0 0 5 5l1.3-2 4 1.5V19a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg> (925)-849-6955</a>
+      <span class="sn-div"></span>
+      <a class="sn-item" href="#quote">Request a Quote</a>
+      <span class="sn-div"></span>
+      <a class="sn-item sn-book" href="#estimate">Schedule an Estimate ↗</a>
+    </div>
+  </div>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Victor's Handyman Services — home">
+      <img class="mark" src="img/favicon.svg" alt="">
+      <span class="wm"><b>Victor's</b><small>Handyman Services</small></span>
+    </a>
+    <nav class="navlinks">
+      <a href="#top">Home</a>
+      <a href="#services">Services</a>
+      <a href="#work">Our Work</a>
+      <a href="#estimate">Schedule An Estimate</a>
+      <a href="#quote">Request a Quote</a>
+      <a href="#contact">Areas of Service</a>
+    </nav>
+    <div class="nav-right">
+      <a class="btn btn-primary" href="#estimate">Schedule an Estimate <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+      <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="i-bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <nav>
+    <a href="#top">Home</a>
+    <a href="#services">Services</a>
+    <a href="#work">Our Work</a>
+    <a href="#estimate">Schedule An Estimate</a>
+    <a href="#quote">Request a Quote</a>
+    <a href="#contact">Areas of Service</a>
+  </nav>
+  <div class="mm-foot">
+    <a class="btn btn-primary" href="#estimate">Schedule an Estimate <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+    <a class="btn btn-glass" href="tel:9258496955">Call Us! (925)-849-6955</a>
+  </div>
+</div>
+
+<section class="hero" id="top">
+  <div class="hero-bg"><img src="img/hero.webp" alt="" fetchpriority="high"></div>
+  <div class="hero-scrim"></div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <span class="eyebrow on-dark">Servicing California's East Bay Area</span>
+      <h1>Victor's Handyman <span class="hl">Services.</span></h1>
+      <p class="sub">Where quality and affordability come together</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="#estimate">Schedule an Estimate <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+        <a class="btn btn-glass" href="tel:9258496955">Call Us! <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+        <a class="btn btn-glass" href="#contact">Areas of Service</a>
+      </div>
+      <div class="promise">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>20 years of handyman experience</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>100% satisfaction</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg>Small or big, we do it all</span>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">Scroll<span class="line"></span></div>
+</section>
+
+<section class="intro" id="welcome">
+  <div class="wrap intro-grid">
+    <div class="intro-copy">
+      <span class="eyebrow">Welcome to Victor's Handyman Services</span>
+      <h2>Professional Handyman Services</h2>
+      <p>We provide professional, safe and reliable handyman services in the East Bay Area of California. Our handyman technician will complete most important and minor home repairs quickly and efficiently. Quality and your satisfaction are our top priorities so we make sure to complete every home repair to your liking. An honest and detail oriented technician will assist you with any home renovation, installation, maintenance or repairs needs.</p>
+      <h3>Our Promise</h3>
+      <div class="chips">
+        <div class="chip"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg></span> Quality backed by 20 years of handyman experience</div>
+        <div class="chip"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg></span> 100% Satisfaction of any repair work</div>
+        <div class="chip"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg></span> Small or big, we do it all</div>
+      </div>
+      <a class="btn btn-primary" href="#estimate">Schedule an Estimate <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+    </div>
+    <div class="intro-media">
+      <img src="img/intro.webp" alt="Finished brick bar and kitchen remodel by Victor's Handyman Services" loading="lazy">
+      <div class="badge"><b>20 yrs</b><small>of handyman experience</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="stats" style="padding:0">
+  <div class="wrap">
+    <div class="stat"><span class="n" data-to="20"><span class="v">20</span><span class="u">+</span></span><span class="l">Years of handyman experience</span></div>
+    <div class="stat"><span class="n" data-to="100"><span class="v">100</span><span class="u">%</span></span><span class="l">Satisfaction of any repair work</span></div>
+    <div class="stat"><span class="n" data-to="4"><span class="v">4</span></span><span class="l">Core service specialties</span></div>
+    <div class="stat"><span class="n">East<span class="u"> Bay</span></span><span class="l">Servicing California's East Bay Area</span></div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Our Services</span>
+      <h2>Honest and detail oriented craftsmen are ready to assist you.</h2>
+      <p>You can rely on our experience and craftsmanship to support any project ideas or necessities you have. Whatever your task maybe, we promise you quality of work at affordable price.</p>
+    </div>
+    <div class="prod-grid">
+      <a class="card" href="#quote">
+        <div class="pmedia"><img src="img/s-maintenance.webp" alt="Ductless mini-split unit installed on a home exterior" loading="lazy"></div>
+        <div class="card-body"><span class="tag">Year-round</span><h3>General Home Maintenance</h3><p>Keep your home in top shape with our comprehensive seasonal maintenance services. We offer detailed inspections and preventive measures to maintain your property year-round. From gutter cleaning to HVAC checks, we ensure everything is functioning smoothly.</p><span class="go">Request a quote <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span></div>
+      </a>
+      <a class="card" href="#quote">
+        <div class="pmedia"><img src="img/s-carpentry.webp" alt="New French doors with exterior trim" loading="lazy"></div>
+        <div class="card-body"><span class="tag">Inside &amp; out</span><h3>Interior and Exterior Carpentry</h3><p>Enhance your home's aesthetic and structural integrity with our expert carpentry services. We handle custom projects, repairs, and installations, both inside and outside your home. Our craftsmanship ensures durability and a perfect finish.</p><span class="go">Request a quote <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span></div>
+      </a>
+      <a class="card" href="#quote">
+        <div class="pmedia"><img src="img/s-deck.webp" alt="Cedar deck with black cable railing" loading="lazy"></div>
+        <div class="card-body"><span class="tag">Outdoor living</span><h3>Deck Repair and Installation</h3><p>Enjoy the outdoors with a beautifully crafted deck, designed and installed by our skilled team. We also offer repair services to restore your existing deck to its former glory. Whether it's a new build or a fix, we use high-quality materials for lasting results.</p><span class="go">Request a quote <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span></div>
+      </a>
+      <a class="card" href="#quote">
+        <div class="pmedia"><img src="img/s-remodel.webp" alt="Remodeled bathroom vanity with round mirror and tile wall" loading="lazy"></div>
+        <div class="card-body"><span class="tag">Remodeling</span><h3>Bath and Kitchen Remodeling</h3><p>Transform your kitchen and bathroom with our comprehensive remodeling services. We manage every aspect of the renovation, from design to execution, ensuring a seamless process. Our goal is to create functional and stylish spaces that meet your needs.</p><span class="go">Request a quote <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">How it works</span>
+      <h2>Small or big, we do it all.</h2>
+      <p>Whether you need help with repairs, installations, or maintenance, our expert team is here to assist you.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="num">01</span><h3>Schedule an Estimate</h3><p>Call us at (925)-849-6955 or book your appointment — convenient scheduling to meet your handyman needs.</p></div>
+      <div class="step"><span class="num">02</span><h3>Request a Quote</h3><p>Describe your project and we'll get back to you. Quality of work at affordable price.</p></div>
+      <div class="step"><span class="num">03</span><h3>Done to your liking</h3><p>We complete every home repair quickly and efficiently — backed by 100% satisfaction of any repair work.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow center">Our Work</span>
+      <h2>Quality you can see.</h2>
+      <p>Renovations, installations, maintenance and repairs from around the East Bay.</p>
+    </div>
+    <div class="gallery" id="gallery">
+      <button type="button"><img src="img/g01.webp" alt="Cedar staircase with cable railing" loading="lazy"></button>
+      <button type="button"><img src="img/g02.webp" alt="Kitchen cabinets with stone countertops" loading="lazy"></button>
+      <button type="button"><img src="img/g03.webp" alt="Tiled shower wall with built-in niche" loading="lazy"></button>
+      <button type="button"><img src="img/g04.webp" alt="Outdoor stone water feature" loading="lazy"></button>
+      <button type="button"><img src="img/g05.webp" alt="Kitchen pass-through with pendant lights" loading="lazy"></button>
+      <button type="button"><img src="img/g06.webp" alt="Retaining wall and landscaped slope" loading="lazy"></button>
+      <button type="button"><img src="img/g07.webp" alt="Tiled walk-in shower with glass door" loading="lazy"></button>
+      <button type="button"><img src="img/g08.webp" alt="Bathroom vanity and new flooring" loading="lazy"></button>
+      <button type="button" class="more"><img src="img/g09.webp" alt="Front entry steps with iron railing" loading="lazy"></button>
+      <button type="button" class="more"><img src="img/g10.webp" alt="Finished room with new floors and window" loading="lazy"></button>
+      <button type="button" class="more"><img src="img/g11.webp" alt="New interior closet doors" loading="lazy"></button>
+      <button type="button" class="more"><img src="img/g12.webp" alt="Deck board repair in progress" loading="lazy"></button>
+      <button type="button" class="more"><img src="img/g13.webp" alt="Finished room with laminate flooring" loading="lazy"></button>
+      <button type="button" class="more"><img src="img/g14.webp" alt="Bathroom with tile floor" loading="lazy"></button>
+      <button type="button" class="more"><img src="img/g15.webp" alt="Bright finished room with recessed lighting" loading="lazy"></button>
+      <button type="button" class="more"><img src="img/g16.webp" alt="Garage drywall in progress" loading="lazy"></button>
+      <button type="button" class="more"><img src="img/g17.webp" alt="Painted room with track lighting" loading="lazy"></button>
+      <button type="button" class="more"><img src="img/g18.webp" alt="Finished garage conversion" loading="lazy"></button>
+      <button type="button" class="more"><img src="img/g19.webp" alt="Framing and windows during a renovation" loading="lazy"></button>
+      <button type="button" class="more"><img src="img/g20.webp" alt="Interior wall with mini-split unit" loading="lazy"></button>
+      <button type="button" class="more"><img src="img/g21.webp" alt="Drywall with clerestory windows" loading="lazy"></button>
+      <button type="button" class="more"><img src="img/g22.webp" alt="Vaulted ceiling drywall with exposed beam" loading="lazy"></button>
+    </div>
+    <div class="gal-foot"><button class="btn btn-outline" id="galMore" type="button">View all projects</button></div>
+  </div>
+</section>
+
+<section id="estimate">
+  <div class="wrap">
+    <div class="band">
+      <img src="img/band.webp" alt="" loading="lazy">
+      <div class="scrim"></div>
+      <div class="band-inner">
+        <span class="eyebrow on-dark">Schedule An Estimate</span>
+        <h2>Make an Appointment with Victor's Handyman Services!</h2>
+        <p>At Victor's Handyman Services, we offer convenient appointment scheduling to meet your handyman needs. Whether you need help with repairs, installations, or maintenance, our expert team is here to assist you. Book your appointment today and experience reliable and professional service.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="tel:9258496955">Call Us! (925)-849-6955 <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+          <a class="btn btn-light" href="#quote">Request a Quote</a>
+        </div>
+        <p class="mail">Email: <a href="mailto:info@repairrelief.com">info@repairrelief.com</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="team" id="about">
+  <div class="wrap team-grid">
+    <div class="team-photo"><img src="img/estimate.webp" alt="Exterior staircase and deck built by Victor's Handyman Services" loading="lazy"></div>
+    <div class="team-copy">
+      <span class="eyebrow">Where quality and affordability come together</span>
+      <h2>Quality and your satisfaction are our top priorities.</h2>
+      <p>You can rely on our experience and craftsmanship to support any project ideas or necessities you have. An honest and detail oriented technician will assist you with any home renovation, installation, maintenance or repairs needs.</p>
+      <div class="team-names">
+        <div class="name"><span class="dot"></span><div><b>Professional, safe and reliable</b><small>Handyman services in the East Bay Area of California</small></div></div>
+        <div class="name"><span class="dot"></span><div><b>Quick and efficient</b><small>Most important and minor home repairs</small></div></div>
+        <div class="name"><span class="dot"></span><div><b>Quality of work at affordable price</b><small>Whatever your task may be</small></div></div>
+      </div>
+      <div class="cta">
+        <a class="btn btn-primary" href="#estimate">Schedule an Estimate <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="quote">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow center">Request a Quote</span>
+      <h2>Tell us about your project.</h2>
+      <p>Small or big, we do it all. Send us the details and we'll get back to you.</p>
+    </div>
+    <div class="quote-card">
+      <form id="quoteForm" novalidate>
+        <div class="q-grid">
+          <div class="q-field"><label for="qName">Name <i>*</i></label><input id="qName" name="name" autocomplete="name" required></div>
+          <div class="q-field"><label for="qEmail">Email <i>*</i></label><input id="qEmail" name="email" type="email" autocomplete="email" required></div>
+          <div class="q-field full"><label for="qPhone">Phone <i>*</i></label><input id="qPhone" name="phone" type="tel" autocomplete="tel" required></div>
+          <div class="q-field full"><label for="qDesc">Describe your project</label><textarea id="qDesc" name="project"></textarea></div>
+        </div>
+        <p class="q-legal">By submitting this form, you agree to our terms and conditions and privacy policy. <span style="color:var(--accent)">*</span></p>
+        <label class="q-check"><input type="checkbox" id="qAgree"> I have read and agree to the terms and conditions and privacy policy.</label>
+        <div class="q-err" id="qErr" role="alert"></div>
+        <div class="q-nav">
+          <span class="alt">Email: <a href="mailto:info@repairrelief.com">info@repairrelief.com</a></span>
+          <button class="btn btn-primary" type="submit">Send request <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></button>
+        </div>
+      </form>
+      <div class="q-done" id="quoteDone" hidden>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="30" height="30"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h3>Your request is ready to send.</h3>
+        <p>Your email app should open with the details filled in — just hit send. Prefer to talk? Call Us! <a href="tel:9258496955" style="color:var(--accent-ink);font-weight:800">(925)-849-6955</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-sec" id="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Areas of Service</span>
+      <h2>Servicing California's East Bay Area.</h2>
+      <p>Professional, safe and reliable handyman services across Contra Costa and the greater East Bay.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-row"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5c0 8 7 15 15 15v-4l-4-2-2 2a12 12 0 0 1-5-5l2-2-2-4H4Z"/></svg></span><div><b>Call Us!</b><a href="tel:9258496955">(925)-849-6955</a></div></div>
+        <div class="contact-row"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg></span><div><b>Email</b><a href="mailto:info@repairrelief.com">info@repairrelief.com</a></div></div>
+        <div class="contact-row"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg></span><div><b>Areas of Service</b><span>Contra Costa County &amp; California's East Bay Area</span></div></div>
+        <div class="contact-row"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></span><div><b>Schedule An Estimate</b><a href="#estimate">Make an appointment →</a></div></div>
+      </div>
+      <div class="contact-map">
+        <iframe title="Map of Contra Costa County, our service area" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=contra%20costa&amp;output=embed&amp;hl=en-US&amp;z=10"></iframe>
+        <span class="map-cap">Service area</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="#top"><img class="mark" src="img/favicon.svg" alt=""><span class="wm"><b>Victor's</b><small>Handyman Services</small></span></a>
+        <p>Where quality and affordability come together. Professional, safe and reliable handyman services in California's East Bay Area.</p>
+        <a class="fphone" href="tel:9258496955">(925)-849-6955</a>
+      </div>
+      <div><h4>Services</h4><a href="#services">General Home Maintenance</a><a href="#services">Interior &amp; Exterior Carpentry</a><a href="#services">Deck Repair &amp; Installation</a><a href="#services">Bath &amp; Kitchen Remodeling</a></div>
+      <div><h4>Links</h4><a href="#estimate">Schedule An Estimate</a><a href="#quote">Request a Quote</a><a href="#services">Services</a><a href="tel:9258496955">Call Us! (925)-849-6955</a></div>
+      <div><h4>Contact</h4><a href="mailto:info@repairrelief.com">info@repairrelief.com</a><a href="#contact">Areas of Service</a><a href="#work">Our Work</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr">2026</span> Victor's Handyman Services</span>
+      <span>Design concept · not the live site</span>
+    </div>
+  </div>
+</footer>
+
+<div class="flag">Design concept — Victor's Handyman Services</div>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Project photo">
+  <button class="lb-btn lb-x" id="lbClose" type="button" aria-label="Close">&times;</button>
+  <button class="lb-btn lb-prev" id="lbPrev" type="button" aria-label="Previous photo">&#8249;</button>
+  <img id="lbImg" src="" alt="">
+  <button class="lb-btn lb-next" id="lbNext" type="button" aria-label="Next photo">&#8250;</button>
+  <span class="lb-count" id="lbCount"></span>
+</div>
+
+<div class="ft-toast" id="ftToast" role="dialog" aria-label="Schedule an estimate">
+  <button class="x" id="ftClose" type="button" aria-label="Close">&times;</button>
+  <div class="ft-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4 2.5-2.5Z"/></svg></div>
+  <h4>Schedule an Estimate</h4>
+  <p>Small or big, we do it all. Quality of work at affordable price.</p>
+  <a class="btn btn-primary" href="tel:9258496955">Call Us! (925)-849-6955</a>
+  <a class="btn btn-outline" href="#quote" id="ftQuote">Request a Quote</a>
+</div>
+<button class="ft-bubble" id="ftBubble" type="button" aria-label="Schedule an estimate">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4 2.5-2.5Z"/></svg>
+</button>
+
+<script>
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // header background on scroll + hero parallax
+  var hdr=document.getElementById('hdr'), heroBg=document.querySelector('.hero-bg'), ticking=false;
+  function frame(){
+    var y=window.scrollY;
+    hdr.classList.toggle('scrolled', y>40);
+    if(heroBg && !reduceMotion){ heroBg.style.transform='translate3d(0,'+(-y*0.2)+'px,0)'; }
+    ticking=false;
+  }
+  frame();
+  window.addEventListener('scroll',function(){ if(!ticking){ requestAnimationFrame(frame); ticking=true; } },{passive:true});
+
+  // animated stat counters
+  var nums = document.querySelectorAll('.stat .n[data-to]');
+  if(!reduceMotion && 'IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(!e.isIntersecting) return;
+        var el=e.target, to=+el.dataset.to, v=el.querySelector('.v'), t0=null, dur=1100;
+        function tick(ts){ if(!t0)t0=ts; var p=Math.min((ts-t0)/dur,1); var eased=1-Math.pow(1-p,3);
+          v.textContent = Math.round(eased*to); if(p<1) requestAnimationFrame(tick); }
+        v.textContent='0'; requestAnimationFrame(tick); io.unobserve(el);
+      });
+    },{threshold:.5});
+    nums.forEach(function(n){ io.observe(n); });
+  }
+
+  // estimate toast: pops once after scrolling, collapses to a corner bubble
+  (function(){
+    var toast=document.getElementById('ftToast'), closeBtn=document.getElementById('ftClose'), bubble=document.getElementById('ftBubble');
+    var autoShown=false;
+    function openToast(){ toast.classList.add('show'); bubble.classList.remove('show'); }
+    function showBubble(){ toast.classList.remove('show'); bubble.classList.add('show'); }
+    showBubble();
+    try{ if(sessionStorage.getItem('ftDismissed')) autoShown=true; }catch(e){}
+    function onScroll(){
+      if(autoShown) return;
+      if(window.scrollY > Math.max(480, window.innerHeight*0.6)){
+        autoShown=true; openToast(); window.removeEventListener('scroll', onScroll);
+      }
+    }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    function dismiss(){ showBubble(); try{ sessionStorage.setItem('ftDismissed','1'); }catch(e){} }
+    closeBtn.addEventListener('click', dismiss);
+    document.getElementById('ftQuote').addEventListener('click', dismiss);
+    bubble.addEventListener('click', openToast);
+  })();
+
+  // mobile / tablet hamburger menu
+  (function(){
+    var burger=document.getElementById('hamburger'), menu=document.getElementById('mobileMenu');
+    function setOpen(open){
+      menu.classList.toggle('open', open);
+      burger.classList.toggle('open', open);
+      burger.setAttribute('aria-expanded', open?'true':'false');
+      burger.setAttribute('aria-label', open?'Close menu':'Open menu');
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+    burger.addEventListener('click', function(){ setOpen(!menu.classList.contains('open')); });
+    menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ setOpen(false); }); });
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape') setOpen(false); });
+    window.addEventListener('resize', function(){ if(window.innerWidth>1040) setOpen(false); });
+  })();
+
+  // project gallery: show more + lightbox
+  (function(){
+    var gal=document.getElementById('gallery'), more=document.getElementById('galMore');
+    more.addEventListener('click', function(){
+      var open=gal.classList.toggle('expanded');
+      more.textContent = open ? 'Show fewer' : 'View all projects';
+      if(!open) gal.scrollIntoView({block:'start'});
+    });
+    var lb=document.getElementById('lightbox'), img=document.getElementById('lbImg'), count=document.getElementById('lbCount');
+    var items=[].slice.call(gal.querySelectorAll('img')), idx=0;
+    function show(i){ idx=(i+items.length)%items.length; img.src=items[idx].src; img.alt=items[idx].alt; count.textContent=(idx+1)+' / '+items.length; }
+    function open(i){ show(i); lb.classList.add('open'); document.body.style.overflow='hidden'; document.getElementById('lbClose').focus(); }
+    function close(){ lb.classList.remove('open'); document.body.style.overflow=''; }
+    gal.querySelectorAll('button').forEach(function(b,i){ b.addEventListener('click', function(){ open(i); }); });
+    document.getElementById('lbClose').addEventListener('click', close);
+    document.getElementById('lbPrev').addEventListener('click', function(){ show(idx-1); });
+    document.getElementById('lbNext').addEventListener('click', function(){ show(idx+1); });
+    lb.addEventListener('click', function(e){ if(e.target===lb) close(); });
+    document.addEventListener('keydown', function(e){
+      if(!lb.classList.contains('open')) return;
+      if(e.key==='Escape') close(); else if(e.key==='ArrowLeft') show(idx-1); else if(e.key==='ArrowRight') show(idx+1);
+    });
+  })();
+
+  // request-a-quote form: static host, so hand the request to the visitor's email app
+  (function(){
+    var form=document.getElementById('quoteForm'), err=document.getElementById('qErr');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var name=form.name.value.trim(), email=form.email.value.trim(), phone=form.phone.value.trim(), desc=form.project.value.trim();
+      if(!name||!email||!phone){ err.textContent='Please fill in your name, email and phone.'; return; }
+      if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ err.textContent='Please enter a valid email address.'; return; }
+      if(!document.getElementById('qAgree').checked){ err.textContent='Please select at least one checkbox.'; return; }
+      err.textContent='';
+      var body='Name: '+name+'\nEmail: '+email+'\nPhone: '+phone+'\n\nProject:\n'+(desc||'(not provided)');
+      window.location.href='mailto:info@repairrelief.com?subject='+encodeURIComponent('Quote request from '+name)+'&body='+encodeURIComponent(body);
+      form.hidden=true; document.getElementById('quoteDone').hidden=false;
+    });
+  })();
+</script>
+</body>
+</html>
